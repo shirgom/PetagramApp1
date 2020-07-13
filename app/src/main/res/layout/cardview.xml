@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvcontacto"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="4dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:id="@+id/foto"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/p1"
+            />
+        <TextView
+            android:id="@+id/tvnameCV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nombre"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+        <ImageButton
+            android:id="@+id/btnlike"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/icons8_hueso_del_perro_50" />
+
+            <ImageButton
+                android:id="@+id/btnlikes"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/icons8_hueso_del_perro_48"
+                android:layout_marginLeft="250dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textSize="40dp"
+                android:textColor="@color/colorPrimaryDark"
+                />
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>
