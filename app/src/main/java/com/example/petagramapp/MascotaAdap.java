@@ -22,7 +22,7 @@ public class MascotaAdap extends RecyclerView.Adapter <MascotaAdap.MascotasViewH
     Activity activity;
 
 
-    public MascotaAdap (ArrayList<MascotaDet> mascotas, Activity activity){
+    public MascotaAdap(ArrayList<MascotaDet> mascotas, Activity activity){
         this.mascotas = mascotas;
         this.activity =activity;
     }
@@ -45,22 +45,24 @@ public class MascotaAdap extends RecyclerView.Adapter <MascotaAdap.MascotasViewH
         mascotasViewHolder.foto.setImageResource(mascotaDet.getFoto());
         mascotasViewHolder.tvnameCV.setText(mascotaDet.getNombre());
 
+
+
         mascotasViewHolder.btnlike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Toast.makeText(activity, "Diste like a " + mascotaDet.getNombre(), Toast.LENGTH_SHORT).show();
 
-
             }
         });
-
-
     }
 
     @Override
     public int getItemCount() { //Cantidad de elementos que contiene la lista
         return mascotas.size();
+    }
+
+    public void setOnClickListener(View.OnClickListener onClickListener) {
     }
 
     public static class MascotasViewHolder extends RecyclerView.ViewHolder{
@@ -81,4 +83,5 @@ public class MascotaAdap extends RecyclerView.Adapter <MascotaAdap.MascotasViewH
 
         }
     }
+
 }

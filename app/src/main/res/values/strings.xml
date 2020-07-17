@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Petagram</string>
     <string name="nombre">Name</string>
+    <string name="boton">Enviar Correo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Jack</string>
+    <string name="correo">shirgom@gmail.com</string>
+
 </resources>

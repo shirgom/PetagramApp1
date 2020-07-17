@@ -1,6 +1,8 @@
 package com.example.petagramapp;
 
-public class MascotaDet {
+import java.io.Serializable;
+
+public class MascotaDet implements Serializable {
 
 
     private String nombre;

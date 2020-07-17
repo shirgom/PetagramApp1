@@ -2,28 +2,46 @@ package com.example.petagramapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.android.material.tabs.TabLayout;
+
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
     ArrayList <MascotaDet> mascotas;
     private RecyclerView ListaMascotas;
+    private Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+
+    //
+    Mascotaperfil mascotaperfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar= (Toolbar)findViewById(R.id.miab);
+        toolbar=(Toolbar) findViewById(R.id.toolbar);
+        tabLayout= (TabLayout) findViewById(R.id.tablayout);
+        viewPager= (ViewPager) findViewById(R.id.viewp);
+        setupViewPager();
+
+
+        /*Toolbar toolbar= (Toolbar)findViewById(R.id.miab);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -36,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         //GridLayoutManager glm= new GridLayoutManager(this,2);
         ListaMascotas.setLayoutManager(llm);
         IniciarLista();
-        IniciarAdap();
+        IniciarAdap(); */
 
         /*ListView listView =(ListView) findViewById(R.id.lvcontactos);
         listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nombrescontacto));
@@ -54,6 +72,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 */
+        if (toolbar !=null){
+            setSupportActionBar(toolbar);
+        }
+
+    }
+
+    //Metodo para poner en orbita los fragments
+
+    private ArrayList <Fragment> agregarfragments (){
+
+        ArrayList <Fragment> fragments =new ArrayList<>();
+        fragments.add(new PetagramFragment());
+        fragments.add(new Mascotaperfil());
+        return fragments;
+    }
+
+    private void setupViewPager (){
+        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarfragments()));
+        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_action_name);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_puppy);
     }
 
     //actionview
@@ -64,40 +103,28 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected (MenuItem item) {
 
         switch ((item.getItemId())){
-            case R.id.mstar:
-                Intent intent= new Intent(this, Activity2.class);
+
+            case R.id.mcontacto:
+                Intent intent= new Intent(this, ContactoActivity.class);
                 startActivity(intent);
+                break;
+
+            case R.id.macerca:
+                Intent intent2= new Intent(this, AboutActivity.class);
+                startActivity(intent2);
+                break;
+
+            case R.id.mstar:
+                Intent intent1= new Intent(this, Activity2.class);
+                startActivity(intent1);
                 break;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-
-
-
-    public void IniciarAdap (){
-
-        MascotaAdap adap= new MascotaAdap(mascotas,this);
-        ListaMascotas.setAdapter(adap);
-
-    }
-
-    public void  IniciarLista (){
-
-        mascotas = new ArrayList<MascotaDet>();
-
-        mascotas.add(new MascotaDet("Toby", "320456", "shir@icloud.com", R.drawable.p1));
-        mascotas.add(new MascotaDet("Motas", "320455", "stell@icloud.com", R.drawable.p2 ));
-        mascotas.add(new MascotaDet("Lupe", "320236", "luis@icloud.com",R.drawable.p3));
-        mascotas.add(new MascotaDet("Romeo", "324366", "vivi@icloud.com", R.drawable.p4));
-        mascotas.add(new MascotaDet("Aria", "320678", "fabi@icloud.com",R.drawable.p5));
-        mascotas.add(new MascotaDet("Jack", "320653", "jack@icloud.com",R.drawable.p6));
-
-
     }
 
 }
