@@ -13,6 +13,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.petagramapp.DB.ConstructorMascotas;
+
 import java.util.ArrayList;
 
 
@@ -38,21 +40,24 @@ public class MascotaAdap extends RecyclerView.Adapter <MascotaAdap.MascotasViewH
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MascotasViewHolder mascotasViewHolder, int position) { //asignar items de la lista
+    public void onBindViewHolder(@NonNull final MascotasViewHolder mascotasViewHolder, int position) { //asignar items de la lista
 
 
         final MascotaDet mascotaDet= mascotas.get(position);
         mascotasViewHolder.foto.setImageResource(mascotaDet.getFoto());
         mascotasViewHolder.tvnameCV.setText(mascotaDet.getNombre());
+        mascotasViewHolder.tvlikes.setText(String.valueOf(mascotaDet.getLikes()) + " " + activity.getString(R.string.likes));
 
 
 
         mascotasViewHolder.btnlike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(activity, "Diste like a: " +mascotaDet.getNombre(), Toast.LENGTH_SHORT).show();
 
-                Toast.makeText(activity, "Diste like a " + mascotaDet.getNombre(), Toast.LENGTH_SHORT).show();
-
+                ConstructorMascotas constructporContactos= new ConstructorMascotas(activity);
+                constructporContactos.darLikeCotnacto(mascotaDet);
+                mascotasViewHolder.tvlikes.setText(constructporContactos.obtenerLikesContacto(mascotaDet) + " " + activity.getString(R.string.likes));
             }
         });
     }
@@ -60,6 +65,7 @@ public class MascotaAdap extends RecyclerView.Adapter <MascotaAdap.MascotasViewH
     @Override
     public int getItemCount() { //Cantidad de elementos que contiene la lista
         return mascotas.size();
+
     }
 
     public void setOnClickListener(View.OnClickListener onClickListener) {
@@ -70,6 +76,7 @@ public class MascotaAdap extends RecyclerView.Adapter <MascotaAdap.MascotasViewH
         private ImageView foto;
         private TextView tvnameCV;
         private ImageButton btnlike;
+        private TextView tvlikes;
 
 
 
@@ -79,6 +86,7 @@ public class MascotaAdap extends RecyclerView.Adapter <MascotaAdap.MascotasViewH
             foto=(ImageView)itemView.findViewById(R.id.foto);
             tvnameCV= (TextView) itemView.findViewById(R.id.tvnameCV);
             btnlike =(ImageButton) itemView.findViewById(R.id.btnlike);
+            tvlikes= (TextView) itemView.findViewById(R.id.tvlikes);
 
 
         }

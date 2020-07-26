@@ -56,10 +56,10 @@ public class Mascotaperfil extends Fragment {
 
         mascotas = new ArrayList<MascotaDet>();
 
-        mascotas.add(new MascotaDet("Jack", "320456", "shir@icloud.com", R.drawable.ch1));
-        mascotas.add(new MascotaDet("Jack", "320455", "stell@icloud.com", R.drawable.ch2 ));
-        mascotas.add(new MascotaDet("Jack", "320236", "luis@icloud.com",R.drawable.ch3));
-        mascotas.add(new MascotaDet("Jack", "324366", "vivi@icloud.com", R.drawable.ch4));
+        mascotas.add(new MascotaDet("Jack", "320456", "shir@icloud.com", R.drawable.ch1,1));
+        mascotas.add(new MascotaDet("Jack", "320455", "stell@icloud.com", R.drawable.ch2,1 ));
+        mascotas.add(new MascotaDet("Jack", "320236", "luis@icloud.com",R.drawable.ch3,1));
+        mascotas.add(new MascotaDet("Jack", "324366", "vivi@icloud.com", R.drawable.ch4,1));
 
 
 

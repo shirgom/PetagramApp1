@@ -47,11 +47,11 @@ public class Activity2 extends AppCompatActivity {
 
         mascotas = new ArrayList<MascotaDet>();
 
-        mascotas.add(new MascotaDet("Toby", "320456", "shir@icloud.com", R.drawable.p1));
-        mascotas.add(new MascotaDet("Motas", "320455", "stell@icloud.com", R.drawable.p2 ));
-        mascotas.add(new MascotaDet("Lupe", "320236", "luis@icloud.com",R.drawable.p3));
-        mascotas.add(new MascotaDet("Romeo", "324366", "vivi@icloud.com", R.drawable.p4));
-        mascotas.add(new MascotaDet("Aria", "320678", "fabi@icloud.com",R.drawable.p5));
+        mascotas.add(new MascotaDet("Toby", "320456", "shir@icloud.com", R.drawable.p1,5));
+        mascotas.add(new MascotaDet("Motas", "320455", "stell@icloud.com", R.drawable.p2,4 ));
+        mascotas.add(new MascotaDet("Lupe", "320236", "luis@icloud.com",R.drawable.p3,4));
+        mascotas.add(new MascotaDet("Romeo", "324366", "vivi@icloud.com", R.drawable.p4,3));
+        mascotas.add(new MascotaDet("Aria", "320678", "fabi@icloud.com",R.drawable.p5,2));
 
 
 
