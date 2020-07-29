@@ -80,6 +80,7 @@ public class ConstructorMascotas {
         ContentValues contentValues = new ContentValues();
         contentValues.put(ConstantesBD.TABLE_LIKES_PETS_ID_PETS, mascotaDet.getId());
         contentValues.put(ConstantesBD.TABLE_LIKES_PETS_NUMERO_LIKES, LIKE);
+
         db.insertarLikeContacto(contentValues);
     }
 
@@ -96,6 +97,7 @@ public class ConstructorMascotas {
         contentValues.put(ConstantesBD.TABLE_PETS_TELEFONO_F , mascotaDet.getTelefono());
         contentValues.put(ConstantesBD.TABLE_PETS_EMAIL_F , mascotaDet.getEmail());
         contentValues.put(ConstantesBD.TABLE_PETS_FOTO_F , mascotaDet.getFoto());
+        contentValues.put(ConstantesBD.TABLE_PETS_NUMERO_LIKES,0);
         db.insertarFavoritos(contentValues);
     }
 

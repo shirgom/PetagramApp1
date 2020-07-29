@@ -29,6 +29,7 @@ public class BaseDatos extends SQLiteOpenHelper {
                 ConstantesBD.TABLE_PETS_TELEFONO + " TEXT, " +
                 ConstantesBD.TABLE_PETS_EMAIL + " TEXT, " +
                 ConstantesBD.TABLE_PETS_FOTO + " INTEGER" +
+
                 ")";
         String queryCrearTablaLikesContacto = "CREATE TABLE " + ConstantesBD.TABLE_LIKES_PETS + "(" +
                 ConstantesBD.TABLE_LIKES_PETS_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -42,7 +43,8 @@ public class BaseDatos extends SQLiteOpenHelper {
                 ConstantesBD.TABLE_PETS_NOMBRE_F + " TEXT, " +
                 ConstantesBD.TABLE_PETS_TELEFONO_F + " TEXT, " +
                 ConstantesBD.TABLE_PETS_EMAIL_F + " TEXT, " +
-                ConstantesBD.TABLE_PETS_FOTO_F + " INTEGER" +
+                ConstantesBD.TABLE_PETS_FOTO_F + " INTEGER," +
+                ConstantesBD.TABLE_PETS_NUMERO_LIKES + " INTEGER " +
                 ")";
 
         db.execSQL(queryCrearTablaContacto);
@@ -77,6 +79,8 @@ public class BaseDatos extends SQLiteOpenHelper {
             String queryLikes = "SELECT COUNT(" + ConstantesBD.TABLE_LIKES_PETS_NUMERO_LIKES + ") as likes " +
                     " FROM " + ConstantesBD.TABLE_LIKES_PETS +
                     " WHERE " + ConstantesBD.TABLE_LIKES_PETS_ID_PETS + "=" + mascotaActual.getId();
+
+
 
             Cursor registrosLikes = db.rawQuery(queryLikes, null);
             if (registrosLikes.moveToNext()) {
@@ -114,6 +118,8 @@ public class BaseDatos extends SQLiteOpenHelper {
                 " FROM " + ConstantesBD.TABLE_LIKES_PETS +
                 " WHERE " + ConstantesBD.TABLE_LIKES_PETS_ID_PETS + "=" + mascotaDet.getId();
 
+
+
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor registros = db.rawQuery(query, null);
 
@@ -139,7 +145,7 @@ public class BaseDatos extends SQLiteOpenHelper {
         ArrayList<MascotaDet> favoritos = new ArrayList<>();
         if (fav.moveToNext()) {
             do {
-                favoritos.add(new MascotaDet(fav.getString(1), fav.getString(0), fav.getString(2), fav.getInt(4), fav.getInt(0)));
+                favoritos.add(new MascotaDet(fav.getString(1), fav.getString(0), fav.getString(2), fav.getInt(4), fav.getInt(5)));
 
             } while (fav.moveToNext());
 

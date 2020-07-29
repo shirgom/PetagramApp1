@@ -12,6 +12,7 @@ public final class ConstantesBD {
     public static final String TABLE_PETS_EMAIL     = "email";
     public static final String TABLE_PETS_FOTO      = "foto";
 
+
     public static final String TABLE_LIKES_PETS = "pets_likes";
     public static final String TABLE_LIKES_PETS_ID = "id";
     public static final String TABLE_LIKES_PETS_ID_PETS = "id_mascota";
@@ -23,5 +24,6 @@ public final class ConstantesBD {
     public static final String TABLE_PETS_TELEFONO_F    = "telefono";
     public static final String TABLE_PETS_EMAIL_F       = "email";
     public static final String TABLE_PETS_FOTO_F        = "foto";
+    public static final String TABLE_PETS_NUMERO_LIKES = "likes";
 }
 
