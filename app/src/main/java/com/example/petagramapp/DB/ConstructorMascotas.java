@@ -25,6 +25,7 @@ public class ConstructorMascotas {
 
 
     public void insertarTresContactos(BaseDatos db){
+
         ContentValues contentValues = new ContentValues();
         contentValues.put(ConstantesBD.TABLE_PETS_NOMBRE, "Toby");
         contentValues.put(ConstantesBD.TABLE_PETS_TELEFONO, "77779999");
@@ -86,4 +87,16 @@ public class ConstructorMascotas {
         BaseDatos db = new BaseDatos(context);
         return db.obtenerLikesContacto(mascotaDet);
     }
+
+    public void darLikefavorito (MascotaDet mascotaDet){
+        BaseDatos db = new BaseDatos(context);
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(ConstantesBD.TABLE_PETS_ID_F, mascotaDet.getId());
+        contentValues.put(ConstantesBD.TABLE_PETS_NOMBRE_F , mascotaDet.getNombre());
+        contentValues.put(ConstantesBD.TABLE_PETS_TELEFONO_F , mascotaDet.getTelefono());
+        contentValues.put(ConstantesBD.TABLE_PETS_EMAIL_F , mascotaDet.getEmail());
+        contentValues.put(ConstantesBD.TABLE_PETS_FOTO_F , mascotaDet.getFoto());
+        db.insertarFavoritos(contentValues);
+    }
+
 }

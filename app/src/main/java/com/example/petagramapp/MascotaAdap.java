@@ -21,6 +21,7 @@ import java.util.ArrayList;
 public class MascotaAdap extends RecyclerView.Adapter <MascotaAdap.MascotasViewHolder> {
 
     ArrayList <MascotaDet> mascotas;
+    ArrayList<MascotaDet> mostrardatos;
     Activity activity;
 
 
@@ -28,6 +29,8 @@ public class MascotaAdap extends RecyclerView.Adapter <MascotaAdap.MascotasViewH
         this.mascotas = mascotas;
         this.activity =activity;
     }
+
+    
 
 
     @NonNull
@@ -58,6 +61,9 @@ public class MascotaAdap extends RecyclerView.Adapter <MascotaAdap.MascotasViewH
                 ConstructorMascotas constructporContactos= new ConstructorMascotas(activity);
                 constructporContactos.darLikeCotnacto(mascotaDet);
                 mascotasViewHolder.tvlikes.setText(constructporContactos.obtenerLikesContacto(mascotaDet) + " " + activity.getString(R.string.likes));
+                constructporContactos.darLikefavorito(mascotaDet);
+                Toast.makeText(activity, "SE AGREGÓ CORRECTAMENTE", Toast.LENGTH_LONG).show();
+
             }
         });
     }
@@ -91,5 +97,14 @@ public class MascotaAdap extends RecyclerView.Adapter <MascotaAdap.MascotasViewH
 
         }
     }
+
+    /*public void guardardatos (View v){
+        BaseDatos2 db= new BaseDatos2(activity,"admin",null, 1);
+        SQLiteDatabase BaseDatos= db.getWritableDatabase();
+        String nombre=
+
+
+
+    }*/
 
 }

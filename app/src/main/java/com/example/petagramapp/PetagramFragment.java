@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
-import com.example.petagramapp.presentador.RecyclerPresenter;
 import com.example.petagramapp.presentador.RecyclerPresenterC;
 
 import java.util.ArrayList;
@@ -21,6 +21,7 @@ public class PetagramFragment extends Fragment implements IPetagramFragmentView 
     ArrayList<MascotaDet> mascotas;
     private RecyclerView ListaMascotas;
     private RecyclerPresenterC presenter;
+    private ImageButton like;
 
 
 
@@ -32,7 +33,18 @@ public class PetagramFragment extends Fragment implements IPetagramFragmentView 
 
 
         ListaMascotas= (RecyclerView) v.findViewById(R.id.rvmascotas);
+        //like= (ImageButton) v.findViewById(R.id.btnlike);
         presenter= new RecyclerPresenterC(this,getContext());
+        /*like.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BaseDatos2 db = new BaseDatos2(getContext());
+                db.guardardatos(mascotaDet.getNombre(),mascotaDet.getFoto());
+                Toast.makeText(getContext(), "SE AGREGÓ CORRECTAMENTE", Toast.LENGTH_LONG).show();
+            }
+        });*/
+
+
         return v;
     }
 

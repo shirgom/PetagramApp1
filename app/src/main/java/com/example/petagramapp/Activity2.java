@@ -7,12 +7,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.example.petagramapp.DB.BaseDatos;
+
 import java.util.ArrayList;
 
 public class Activity2 extends AppCompatActivity {
 
     ArrayList<MascotaDet> mascotas;
     private RecyclerView ListaFavoritos;
+    private MascotaAdap mascotaAdap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,16 +30,18 @@ public class Activity2 extends AppCompatActivity {
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
         ListaFavoritos= (RecyclerView) findViewById(R.id.rvfavoritos);
-
         LinearLayoutManager llm= new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
-        //GridLayoutManager glm= new GridLayoutManager(this,2);
         ListaFavoritos.setLayoutManager(llm);
-        IniciarLista();
-        IniciarAdap();
+
+        BaseDatos db= new BaseDatos(getApplicationContext());
+        mascotaAdap = new MascotaAdap(db.mostrardatos(), this);
+        ListaFavoritos.setAdapter(mascotaAdap);
+        //IniciarLista();
+        //IniciarAdap();
     }
 
-    public void IniciarAdap (){
+    /*public void IniciarAdap (){
 
         MascotaAdap adap= new MascotaAdap(mascotas,this);
         ListaFavoritos.setAdapter(adap);
@@ -55,5 +60,5 @@ public class Activity2 extends AppCompatActivity {
 
 
 
-    }
+    }*/
 }
