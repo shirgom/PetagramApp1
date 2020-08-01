@@ -3,7 +3,7 @@ package com.example.petagramapp.DB;
 import android.content.ContentValues;
 import android.content.Context;
 
-import com.example.petagramapp.MascotaDet;
+import com.example.petagramapp.Modelo.MascotaDet;
 import com.example.petagramapp.R;
 
 import java.util.ArrayList;
@@ -97,7 +97,7 @@ public class ConstructorMascotas {
         contentValues.put(ConstantesBD.TABLE_PETS_TELEFONO_F , mascotaDet.getTelefono());
         contentValues.put(ConstantesBD.TABLE_PETS_EMAIL_F , mascotaDet.getEmail());
         contentValues.put(ConstantesBD.TABLE_PETS_FOTO_F , mascotaDet.getFoto());
-        contentValues.put(ConstantesBD.TABLE_PETS_NUMERO_LIKES,0);
+        contentValues.put(ConstantesBD.TABLE_PETS_NUMERO_LIKES,1);
         db.insertarFavoritos(contentValues);
     }
 

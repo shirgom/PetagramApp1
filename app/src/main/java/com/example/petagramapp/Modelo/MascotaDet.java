@@ -1,4 +1,4 @@
-package com.example.petagramapp;
+package com.example.petagramapp.Modelo;
 
 import java.io.Serializable;
 

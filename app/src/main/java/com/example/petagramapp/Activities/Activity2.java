@@ -1,4 +1,4 @@
-package com.example.petagramapp;
+package com.example.petagramapp.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -7,7 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.example.petagramapp.Adaptador.MascotaAdap;
 import com.example.petagramapp.DB.BaseDatos;
+import com.example.petagramapp.Modelo.MascotaDet;
+import com.example.petagramapp.R;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.example.petagramapp;
+package com.example.petagramapp.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -9,7 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-
+import com.example.petagramapp.JavaMailAPI;
+import com.example.petagramapp.R;
 
 
 public class ContactoActivity extends AppCompatActivity {

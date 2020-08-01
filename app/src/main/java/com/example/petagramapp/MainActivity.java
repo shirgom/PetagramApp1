@@ -3,9 +3,6 @@ package com.example.petagramapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
@@ -14,6 +11,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.petagramapp.Activities.AboutActivity;
+import com.example.petagramapp.Activities.Activity2;
+import com.example.petagramapp.Activities.ContactoActivity;
+import com.example.petagramapp.Adaptador.PageAdapter;
+import com.example.petagramapp.Modelo.MascotaDet;
+import com.example.petagramapp.Vista.Mascotaperfil;
+import com.example.petagramapp.Vista.PetagramFragment;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;

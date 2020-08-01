@@ -1,9 +1,11 @@
-package com.example.petagramapp;
+package com.example.petagramapp.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+
+import com.example.petagramapp.R;
 
 public class AboutActivity extends AppCompatActivity {
 

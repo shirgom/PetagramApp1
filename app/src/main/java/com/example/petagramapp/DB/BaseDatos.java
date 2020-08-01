@@ -6,8 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.petagramapp.MascotaDet;
-import com.example.petagramapp.R;
+import com.example.petagramapp.Modelo.MascotaDet;
 
 import java.util.ArrayList;
 
@@ -138,7 +137,7 @@ public class BaseDatos extends SQLiteOpenHelper {
         db.close();
     }
 
-    public ArrayList<MascotaDet> mostrardatos() {
+    public ArrayList<MascotaDet> mostrardatos() { //recyclerview boton estrella
         SQLiteDatabase mostrar = getReadableDatabase();
         String query = "SELECT * FROM " + ConstantesBD.TABLE_PETS_F;
         Cursor fav = mostrar.rawQuery(query, null);

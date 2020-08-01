@@ -3,8 +3,8 @@ package com.example.petagramapp.presentador;
 import android.content.Context;
 
 import com.example.petagramapp.DB.ConstructorMascotas;
-import com.example.petagramapp.IPetagramFragmentView;
-import com.example.petagramapp.MascotaDet;
+import com.example.petagramapp.Vista.IPetagramFragmentView;
+import com.example.petagramapp.Modelo.MascotaDet;
 
 import java.util.ArrayList;
 

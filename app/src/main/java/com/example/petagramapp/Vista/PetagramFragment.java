@@ -1,4 +1,4 @@
-package com.example.petagramapp;
+package com.example.petagramapp.Vista;
 
 import android.os.Bundle;
 
@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import com.example.petagramapp.Adaptador.MascotaAdap;
+import com.example.petagramapp.Modelo.MascotaDet;
+import com.example.petagramapp.R;
 import com.example.petagramapp.presentador.RecyclerPresenterC;
 
 import java.util.ArrayList;
